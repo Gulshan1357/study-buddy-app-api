@@ -1,0 +1,31 @@
+<h1>Edit Personal Details</h1>
+
+<%= form_with(model: Current.user, url: edit_profile_path, data: { turbo: false }) do |form| %>
+  <% if form.object.errors.any? %>
+    <div class="alert alert-danger">
+      <% form.object.errors.full_messages.each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :password %>
+    <%= form.password_field :password, class: "form-control", placeholder: "password" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation, class: "form-control", placeholder: "password" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :details %>
+    <%= form.text_area :details, class: "form-control", placeholder: "Tell us about yourself" %>
+  </div>
+<!--  <div class="mb-3">-->
+    <%#= form.label :avatar %>
+    <%#= form.file_field :avatar, class: "form-control" %>
+<!--  </div>-->
+  <div class="mb-3">
+    <%= form.submit "Update", class: "btn btn-primary" %>
+  </div>
+<% end %>
