@@ -1,0 +1,16 @@
+<% if notice.present? %>
+  <div class="alert alert-info"><%= notice %></div>
+<% end %>
+
+<h1>Slots</h1>
+
+<div id="slots">
+  <% @slots.each do |slot| %>
+    <%= render slot %>
+    <p>
+      <%= link_to "Show this slot", slot %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New slot", new_slot_path %>
