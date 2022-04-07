@@ -1,0 +1,66 @@
+<% if notice.present? %>
+  <div class="alert alert-info"><%= notice %></div>
+<% end %>
+
+<h1>Search Result</h1>
+
+<% if @matches.present? %>
+  <div id="meetings">
+    <p>
+      <strong>Meeting will starts at:</strong>
+      <%= @start_time %>
+    </p>
+
+    <p>
+      <strong>Duration: 1hr</strong>
+      <%#= @ends_time %>
+    </p>
+
+    <% @matches.each do |match| %>
+
+      <p>
+        <strong>First Name:</strong>
+        <%= match.first_name %>
+      </p>
+      <p>
+        <strong>Last Name:</strong>
+        <%= match.last_name %>
+      </p>
+      <p>
+        <strong>Details:</strong>
+        <%= match.details %>
+      </p>
+<!--      <p>-->
+        <%#= render partial: 'matchbutton', collection: @meeting, locals: {first_user_id: params[:first_user], second_user_id: match.id, starts_at: params[:start_time], ends_at:  (params[:start_time].to_datetime + 1.hours).to_s} %>
+        <%#= link_to "Set up a meeting with this guy", meeting %>
+<!--      </p>-->
+
+
+        <%= form_for @meeting do |form| %>
+          <%# if meeting.errors.any? %>
+<!--            <div style="color: red">-->
+<!--              <h2><%#= pluralize(meeting.errors.count, "error") %> prohibited this meeting from being saved:</h2>-->
+
+<!--              <ul>-->
+                <%# meeting.errors.each do |error| %>
+<!--                  <li><%#= error.full_message %></li>-->
+                <%# end %>
+<!--              </ul>-->
+<!--            </div>-->
+          <%# end %>
+          <%= form.hidden_field :starts_at, value: params[:start_time] %>
+          <%= form.hidden_field :ends_at, value: (params[:start_time].to_datetime + 1.hours).to_s %>
+          <%= form.hidden_field :first_user_id, value: params[:first_user] %>
+          <%#= hidden_field_tag 'second_user_id', match.id %>
+          <%= form.hidden_field :second_user_id, value: match.id %>
+          <div>
+            <%= form.submit "Set up a meeting with <this> person"%>
+             <%# byebug %>
+          </div>
+        <% end %>
+
+    <% end %>
+<% end %>
+
+
+<%= link_to "Back to slots", slots_path %>

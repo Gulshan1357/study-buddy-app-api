@@ -1,0 +1,18 @@
+<h1>New slot</h1>
+
+
+<p>Meeting will starts at: <%= @meeting_starts_at %></p>
+<p>Meeting will ends at: <%= @meeting_ends_at %></p>
+<p>Meeting's First User ID: <%= @meeting_first_user %></p>
+<p>Meeting's First User Name: <%= @meeting_first_user_name %></p>
+<%= link_to "Search for a match", search_date_path(start_time: @meeting_starts_at, first_user: @meeting_first_user), method: :get %>
+
+<%#= render "form", meeting: @meeting %>
+<!--<span><%#= button_to 'Search for a Match', {:controller => "meetings", :action => "create", :car_id => car.id, :user_id=> session[:user_id]} , :method=>:post  %></span>-->
+<%#= link_to "Search for a date", {:controller => "meetings", :action => "searchDate", }, method: :get %>
+
+<br>
+
+<div>
+  <%= link_to "Back to slots", slots_path %>
+</div>

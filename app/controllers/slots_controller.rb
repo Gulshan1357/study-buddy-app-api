@@ -4,9 +4,7 @@ class SlotsController < ApplicationController
 
   # GET /slots or /slots.json
   def index
-    # @slots = Slot.all
-    # byebug
-    @slots = Slot.where(user_id: Current.user.id)
+     @slots = Slot.where(user_id: Current.user.id)
   end
 
   # GET /slots/1 or /slots/1.json

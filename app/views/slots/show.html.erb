@@ -15,7 +15,8 @@
     <%= button_to "Destroy this slot", @slot, method: :delete %>
   </div>
 
-  <% else %>
-
+  <div>
+    <%= link_to "Search a date for this time slot", new_meeting_path(time_slot: params[:id]) %>
+  </div>
 
 <% end %>

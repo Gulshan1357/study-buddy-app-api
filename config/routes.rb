@@ -1,8 +1,11 @@
 # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
 Rails.application.routes.draw do
+  resources :meetings, only: [:index, :show, :new, :create, :destroy]
   resources :slots
   root to: 'main#index'
+
+  get 'meeting/searchDate', to: 'meetings#searchDate', as: :search_date
   # GET /about
   get 'about', to: 'about#index'
 

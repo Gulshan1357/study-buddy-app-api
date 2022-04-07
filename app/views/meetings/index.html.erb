@@ -1,0 +1,16 @@
+<% if notice.present? %>
+    <div class="alert alert-info"><%= notice %></div>
+<% end %>
+
+<h1>Meetings</h1>
+
+<div id="meetings">
+  <% @meetings.each do |meeting| %>
+    <%= render meeting %>
+    <p>
+      <%= link_to "Show this meeting", meeting %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "Set up a new meeting", new_meeting_path %>

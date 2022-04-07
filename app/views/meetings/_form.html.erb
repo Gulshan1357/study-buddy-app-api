@@ -1,0 +1,43 @@
+<%= form_with(model: meeting) do |form| %>
+  <% if meeting.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(meeting.errors.count, "error") %> prohibited this meeting from being saved:</h2>
+
+      <ul>
+        <% meeting.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<!--  <div>-->
+    <%#= form.label :starts_at, style: "display: block"%>
+    <%#= form.hidden_field :starts_at, value: @meeting_starts_at %>
+    <%#= form.datetime_field :starts_at %>
+<!--  </div>-->
+
+<!--  <div>-->
+    <%#= form.label :ends_at, style: "display: block" %>
+    <%#= form.hidden_field :ends_at, value: @meeting_ends_at %>
+    <%#= form.datetime_field :ends_at %>
+<!--  </div>-->
+
+<!--  <div>-->
+    <%#= form.label :first_user_id, style: "display: block" %>
+    <%#= form.text_field :first_user_id %>
+    <%#= form.hidden_field :first_user_id, value: @meeting_first_user %>
+
+<!--  </div>-->
+
+<!--  <div>-->
+    <%#= form.label :second_user_id, style: "display: block" %>
+    <%#= form.text_field :second_user_id %>
+    <%#= form.hidden_field :second_user_id, value: @meeting_second_user %>
+
+<!--  </div>-->
+
+  <div>
+    <%= form.submit "Set up a meeting with <this> person"%>
+  </div>
+<% end %>
