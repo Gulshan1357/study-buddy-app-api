@@ -8,3 +8,19 @@
 
   <%= button_to "Destroy this meeting", @meeting, method: :delete %>
 </div>
+
+<div>
+  <%= render @meeting.messages %>
+</div>
+<div>
+  <%= form_for([@meeting, @meeting.messages.new]) do |form| %>
+    <div>
+      <%= form.hidden_field :sender, value: Current.user.first_name %>
+      <%= form.label :content %>
+      <%= form.text_field :content %>
+    </div>
+    <div>
+      <%= form.submit "Send this message" %>
+    </div>
+  <% end %>
+</div>

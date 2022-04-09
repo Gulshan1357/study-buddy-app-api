@@ -1,7 +1,9 @@
 # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
 Rails.application.routes.draw do
-  resources :meetings, only: [:index, :show, :new, :create, :destroy]
+  resources :meetings, only: [:index, :show, :new, :create, :destroy] do
+    resources :messages, only: [:create]
+  end
   resources :slots
   root to: 'main#index'
 

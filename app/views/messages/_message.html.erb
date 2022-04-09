@@ -1,0 +1,11 @@
+<div class="message">
+  <div>
+    <span class="message-sender">
+      <%= "#{message.sender} (#{time_ago_in_words message.created_at} ago)" %>
+    </span>
+
+  </div>
+  <div>
+    <p><%= message.content %></p>
+  </div>
+</div>
