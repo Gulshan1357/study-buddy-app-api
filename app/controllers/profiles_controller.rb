@@ -16,6 +16,6 @@ class ProfilesController < ApplicationController
   private
 
   def password_params
-    params.require(:user).permit(:password, :password_confirmation, :details)
+    params.require(:user).permit(:password, :password_confirmation, :details, :avatar)
   end
 end

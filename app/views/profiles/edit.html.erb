@@ -26,6 +26,13 @@
     <%#= form.file_field :avatar, class: "form-control" %>
 <!--  </div>-->
   <div class="mb-3">
+    <% if Current.user.avatar.attached? %>
+      <%= image_tag Current.user.avatar, style: "width: 200px; display: block" %>
+    <% end %>
+    <%= form.label :avatar %>
+    <%= form.file_field :avatar, class: "form-control" %>
+  </div>
+  <div class="mb-3">
     <%= form.submit "Update", class: "btn btn-primary" %>
   </div>
 <% end %>
