@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+if User.count < 10
+  10.times do
+    u = User.create(
+      email: FFaker::Internet.email,
+      password: 'random',
+      password_confirmation: 'random',
+      first_name: FFaker::Name.first_name,
+      last_name: FFaker::Name.last_name,
+      details: FFaker::Lorem.phrase,
+    )
+    u.avatar.attach(io: File.open(File.join(Rails.root,'app/assets/images/avatar.png')), filename: 'avatar.png')
+  end
+end
+
