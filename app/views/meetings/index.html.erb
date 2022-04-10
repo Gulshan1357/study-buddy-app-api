@@ -3,14 +3,24 @@
 <% end %>
 
 <h1>Meetings</h1>
+<% if @meetings.empty? %>
+  <p>You don't have any upcoming meetings.</p>
+<% else %>
+  <p class="text-muted">Here are the list of your past and future meetings.</p>
+  <p class="text-muted">You can Chat with your buddy or destroy the meeting by clicking on 'the Show this meeting button'</p>
+  <div id="meetings" class="d-flex flex-row flex-wrap">
+    <% @meetings.each do |meeting| %>
+      <div class="card mx-1 my-1" style="width: 18rem;">
+        <div class="card-body">
+          <%= render meeting %>
+          <p>
+            <%= link_to "Show this meeting", meeting, class: "card-link link-secondary"  %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
 
-<div id="meetings">
-  <% @meetings.each do |meeting| %>
-    <%= render meeting %>
-    <p>
-      <%= link_to "Show this meeting", meeting %>
-    </p>
-  <% end %>
-</div>
 
-<%= link_to "Set up a new meeting", new_meeting_path %>
+

@@ -1,16 +1,23 @@
 <% if notice.present? %>
-<!--  <div class="alert alert-info"><%#= notice %></div>-->
+  <!--  <div class="alert alert-info"><%#= notice %></div>-->
 <% end %>
 
-<h1>Slots</h1>
+<h1>When are you planning to study?</h1>
+<ol>
+  <li class="text-muted">First, you have to specify your intention of when you what to study. You can do that by creating a study time slot.</li>
+  <li class="text-muted">After that you can click the details link of the time-slots to either edit it of scan for a possible match.</li>
+</ol>
+<%= link_to "New slot", new_slot_path, class: "btn btn-secondary mx-1 my-3" %>
 
-<div id="slots">
+<div id="slots" class="d-flex flex-row flex-wrap">
   <% @slots.each do |slot| %>
-    <%= render slot %>
-    <p>
-      <%= link_to "Show this slot", slot %>
-    </p>
+    <div class="card mx-1 my-1" style="width: 18rem;">
+      <div class="card-body">
+        <%= render slot %>
+        <%= link_to "Show this slot", slot, class: "card-link link-secondary" %>
+      </div>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New slot", new_slot_path %>
+

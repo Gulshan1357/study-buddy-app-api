@@ -1,8 +1,11 @@
-<h1>New slot</h1>
-<%= render "form", slot: @slot %>
+<h1 >Enter the timings here</h1>
+<div class="my-4">
+  <%= render "form", slot: @slot %>
+</div>
+
 
 <br>
 
 <div>
-  <%= link_to "Back to slots", slots_path %>
+  <%= link_to "Back to slots", slots_path, class: "link-secondary"  %>
 </div>

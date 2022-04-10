@@ -11,10 +11,10 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :start_time, style: "display: block" %>
+  <div class="mb-3">
+    <%= form.label :start_time, class: "form-label" %>
     <%#= form.datetime_field :start_time %>
-    <%= form.datetime_select :start_time,  minute_step: 30, start_hour: 8, end_hour: 22 %>
+    <%= form.datetime_select :start_time,  minute_step: 30, start_hour: 8, end_hour: 22, class: "form-control"  %>
   </div>
 
   <div>
@@ -23,6 +23,6 @@
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit 'Create a Slot', :class => 'btn btn-secondary' %>
   </div>
 <% end %>

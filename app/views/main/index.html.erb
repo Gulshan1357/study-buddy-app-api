@@ -1,4 +1,29 @@
-<div class="d-flex align-items-center justify-content-center">
-  <h1>Welcome to the Study Date App</h1>
-  <%= image_tag Current.user.avatar %>
-</div>
+<% if Current.user.present? %>
+  <h1 class="text-dark">Hello <%= Current.user.first_name %>!</h1>
+  <p>Welcome, to study buddy app. Here is your profile</p>
+
+  <div class="d-flex flex-column align-items-center justify-content-center">
+    <div class="card mb-3" style="max-width: 100%;">
+      <div class="row g-0">
+        <div class="col-md-6">
+          <% if Current.user != nil%>
+            <%= image_tag Current.user.avatar , class: "img-fluid rounded-start"%>
+        <% end %>
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+            <h5 class="card-title">Full name: <%= Current.user.first_name %> <%= Current.user.last_name %></h5>
+            <p class="card-text">Details: <%= Current.user.details %></p>
+            <p class="card-text"><small class="text-muted">Last updated <%= "(#{time_ago_in_words Current.user.updated_at} ago)" %></small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="text-secondary">Ready to study? Why don't you <%= link_to "book a time slot", slots_path, class: "text-secondary"  %>?</p>
+  </div>
+
+<% else %>
+  <h1 class="text-dark">Welcome to study buddy app.</h1>
+  <p>Here you can find a study buddy for you next study session.</p>
+  <p class="text-secondary"><%= link_to "Login", sign_in_path, class: "link-secondary" %> or <%= link_to "Sign Up", sign_up_path, class: "link-secondary" %> to continue</p>
+<% end %>

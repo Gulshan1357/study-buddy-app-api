@@ -9,27 +9,26 @@
     </div>
   <% end %>
 
-  <div class="mb-3">
-    <%= form.label :password %>
-    <%= form.password_field :password, class: "form-control", placeholder: "password" %>
+  <div class="form-floating mb-3">
+    <%= form.password_field :password, class: "form-control", placeholder: "password", id: "floatingPass" %>
+    <%= form.label :password, class: "form-label", for: "floatingPass" %>
+
   </div>
-  <div class="mb-3">
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation, class: "form-control", placeholder: "password" %>
+  <div class="form-floating mb-3">
+    <%= form.password_field :password_confirmation, class: "form-control", placeholder: "password", id: "floatingPassConfirm"  %>
+    <%= form.label :password_confirmation, class: "form-label", for: "floatingPassConfirm" %>
   </div>
-  <div class="mb-3">
-    <%= form.label :details %>
-    <%= form.text_area :details, class: "form-control", placeholder: "Tell us about yourself" %>
+  <div class="form-floating mb-3">
+    <%= form.text_area :details, class: "form-control", placeholder: "Tell us about yourself", id: "floatingDetails"%>
+    <%= form.label :details, class: "form-label", for: "floatingDetails" %>
+
   </div>
-<!--  <div class="mb-3">-->
-    <%#= form.label :avatar %>
-    <%#= form.file_field :avatar, class: "form-control" %>
-<!--  </div>-->
+
   <div class="mb-3">
+    <%= form.label :avatar, class: "form-label"  %>
     <% if Current.user.avatar.attached? %>
       <%= image_tag Current.user.avatar, style: "width: 200px; display: block" %>
     <% end %>
-    <%= form.label :avatar %>
     <%= form.file_field :avatar, class: "form-control" %>
   </div>
   <div class="mb-3">

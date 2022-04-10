@@ -1,11 +1,11 @@
 <div class="message">
   <div>
     <span class="message-sender">
-      <%= "#{message.sender} (#{time_ago_in_words message.created_at} ago)" %>
+      <span class="fw-bold"><%= "#{message.sender} "%></span> <span class="fw-light"><%= "(#{time_ago_in_words message.created_at} ago)" %></span>
     </span>
 
   </div>
-  <div>
-    <p><%= message.content %></p>
+  <div class="my-2">
+    <p class="text-light"> <span class="bg-primary bg-gradient px-2 py-1" style="--bs-bg-opacity: .8;"><%= message.content %></span></p>
   </div>
 </div>

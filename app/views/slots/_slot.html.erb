@@ -1,12 +1,5 @@
 <div id="<%= dom_id slot %>">
-  <p>
-    <strong>Start time:</strong>
-    <%= slot.start_time %>
-  </p>
-
-<!--  <p>-->
-<!--    <strong>User:</strong>-->
-    <%#= slot.user_id %>
-<!--  </p>-->
-
+      <h5 class="card-title">Date: <%= slot.start_time.strftime("%m/%d/%Y") %></h5>
+      <p class="card-text">Time: <%= slot.start_time.strftime("%I:%M%p") %></p>
 </div>
+

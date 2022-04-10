@@ -1,22 +1,27 @@
-<div id="<%= dom_id meeting %>">
-  <p>
-    <strong>Starts at:</strong>
-    <%= meeting.starts_at %>
+<div id="<%= dom_id meeting %>" class="pt-3">
+  <p class="">
+    <strong>Date: </strong>
+    <%= meeting.starts_at.strftime("%A %b %d, %Y")  %>
+  </p>
+
+  <p class="">
+    <strong>Starting Time: </strong>
+    <%= meeting.starts_at.strftime("%I:%M %p")  %>
+  </p>
+
+  <p class="">
+    <strong>Ending Time: </strong>
+    <%= meeting.ends_at.strftime("%I:%M %p")  %>
   </p>
 
   <p>
-    <strong>Ends at:</strong>
-    <%= meeting.ends_at %>
+    <strong>First Attendant:</strong>
+    <%= meeting.first_user.first_name %> <%= meeting.first_user.last_name %>
   </p>
 
   <p>
-    <strong>First user:</strong>
-    <%= meeting.first_user_id %>
-  </p>
-
-  <p>
-    <strong>Second user:</strong>
-    <%= meeting.second_user_id %>
+    <strong>First Attendant:</strong>
+    <%= meeting.second_user.last_name %> <%= meeting.second_user.last_name %>
   </p>
 
 </div>

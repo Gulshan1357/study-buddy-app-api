@@ -1,15 +1,15 @@
 <h1>Sign In</h1>
 
 <%= form_with(url: sign_in_path, data: { turbo: false }) do |form| %>
-  <div class="mb-3">
-    <%= form.label :email %>
-    <%= form.text_field :email, class: "form-control", placeholder: "steve@next.com" %>
+  <div class="form-floating mb-3">
+    <%= form.text_field :email, class: "form-control", placeholder: "steve@next.com", id: "floatingEm"  %>
+    <%= form.label :email, for: "floatingEm"  %>
   </div>
-  <div class="mb-3">
-    <%= form.label :password %>
-    <%= form.password_field :password, class: "form-control", placeholder: "password" %>
+  <div class="form-floating mb-3">
+    <%= form.password_field :password, class: "form-control", placeholder: "password", id: "floatingPassword"  %>
+    <%= form.label :password, for: "floatingPassword"  %>
   </div>
-  <div class="mb-3">
+  <div class="form-floating mb-3">
     <%= form.submit "Sign In", class: "btn btn-primary" %>
   </div>
 <% end %>

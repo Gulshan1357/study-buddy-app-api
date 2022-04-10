@@ -1,26 +1,37 @@
-<p style="color: green"><%= notice %></p>
+<%= link_to "Back to meetings", meetings_path, class: "link-secondary" %>
 
-<%= render @meeting %>
+<h2 class="my-2">Meeting Details</h2>
+<div class="d-flex flex-column flex-md-row justify-content-between">
 
-<div>
-<!--  <%#= link_to "Edit this meeting", edit_meeting_path(@meeting) %> |-->
-  <%= link_to "Back to meetings", meetings_path %>
+  <div class="flex-fill">
+    <%= render @meeting %>
 
-  <%= button_to "Destroy this meeting", @meeting, method: :delete %>
-</div>
-
-<div>
-  <%= render @meeting.messages %>
-</div>
-<div>
-  <%= form_for([@meeting, @meeting.messages.new]) do |form| %>
     <div>
-      <%= form.hidden_field :sender, value: Current.user.first_name %>
-      <%= form.label :content %>
-      <%= form.text_field :content %>
+      <%= button_to "Destroy this meeting", @meeting, method: :delete, class: "btn btn-danger my-2" %>
     </div>
-    <div>
-      <%= form.submit "Send this message" %>
+  </div>
+
+  <div class="flex-fill mb-4">
+    <h5>Chat Room</h5>
+    <div class="d-flex flex-column bg-light border border-dark px-2 py-2" style="max-width:400px;">
+
+      <div class="mt-4">
+        <%= render @meeting.messages %>
+      </div>
+      <div>
+        <%= form_for([@meeting, @meeting.messages.new]) do |form| %>
+
+            <%= form.hidden_field :sender, value: Current.user.first_name %>
+            <div class="form-floating mb-3">
+              <%= form.text_field :content, class: "form-control", placeholder: "Enter your message here", id: "Messagefloat" %>
+              <%= form.label :content, class: "form-label", for: "Messagefloat" %>
+            </div>
+
+          <span>
+            <%= form.submit "Send", class: "btn btn-success"%>
+          </span>
+        <% end %>
+      </div>
     </div>
-  <% end %>
+  </div>
 </div>
