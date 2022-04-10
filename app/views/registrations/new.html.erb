@@ -9,21 +9,21 @@
     </div>
   <% end %>
   <div class="form-floating mb-3">
-    <%= form.text_field :email, class: "form-control", placeholder: "steve@next.com", id: "floatEmail" %>
+    <%= form.text_field :email, class: "form-control", placeholder: "steve@next.com", id: "floatEmail", :required => true %>
     <%= form.label :email, for: "floatEmail" %>
   </div>
   <div class="form-floating mb-3">
-    <%= form.password_field :password, class: "form-control", placeholder: "password", id: "floatPass" %>
+    <%= form.password_field :password, class: "form-control", placeholder: "password", id: "floatPass", :required => true %>
     <%= form.label :password, for: "floatPass" %>
   </div>
   <div class="form-floating mb-3">
-    <%= form.password_field :password_confirmation, class: "form-control", placeholder: "password", id: "floatPassCon" %>
+    <%= form.password_field :password_confirmation, class: "form-control", placeholder: "password", id: "floatPassCon", :required => true %>
     <%= form.label :password_confirmation, for: "floatPassCon" %>
 
   </div>
   <div class="form-floating mb-3">
-    <%= form.text_field :first_name, class: "form-control", placeholder: "John", id: "floatFName" %>
-    <%= form.label :first_name, for: "floatFName" %>
+    <%= form.text_field :first_name, class: "form-control", placeholder: "John", id: "floatFName", :required => true %>
+    <%= form.label :first_name, for: "floatFName", :required => true %>
   </div>
   <div class="form-floating mb-3">
     <%= form.text_field :last_name, class: "form-control", placeholder: "Doe", id: "floatLName" %>
@@ -35,7 +35,7 @@
   </div>
   <div class="mb-3">
     <%= form.label :avatar, class: "form-label"  %>
-    <%= form.file_field :avatar, class: "form-control" %>
+    <%= form.file_field :avatar, class: "form-control", :required => true %>
   </div>
   <div class="mb-3">
     <%= form.submit "Sign Up", class: "btn btn-primary" %>
