@@ -12,9 +12,6 @@ uc = User.create!(
   details: 'I am a fourth year student. I also love acting, reading books and nature. '
   )
 uc.avatar.attach(io: File.open(File.join(Rails.root,'app/assets/images/chris.jpg')), filename: 'chris.jpg')
-
-User.first.Slot.create(start_time: '2022-04-10 19:00:00')
-
 ue = User.create!(
   email: 'elsa@go.com',
   password: 'sss',
@@ -24,8 +21,6 @@ ue = User.create!(
   details: 'I am a third year student. I love reading, skiing and chess'
   )
 ue.avatar.attach(io: File.open(File.join(Rails.root,'app/assets/images/elsa.jpg')), filename: 'elsa.jpg')
-
-User.last.Slot.create(start_time: '2022-04-10 19:00:00')
 
 
 # if User.count < 10
