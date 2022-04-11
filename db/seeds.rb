@@ -6,7 +6,7 @@ Message.destroy_all
 uc = User.create!(
   email: 'chris@go.com',
   password: 'aaa',
-  password_confirmation: 'abc',
+  password_confirmation: 'aaa',
   first_name: 'Chris',
   last_name: 'Hemsworth',
   details: 'I am a fourth year student. I also love acting, reading books and nature. '
@@ -18,7 +18,7 @@ User.first.Slot.create(start_time: '2022-04-10 19:00:00')
 ue = User.create!(
   email: 'elsa@go.com',
   password: 'sss',
-  password_confirmation: 'abc',
+  password_confirmation: 'sss',
   first_name: 'Elsa',
   last_name: 'Pataky',
   details: 'I am a third year student. I love reading, skiing and chess'
