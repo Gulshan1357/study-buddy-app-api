@@ -31,6 +31,3 @@ rails db:migrate
 rails s
 ```
 
-## Peculiarity
-1. Didn't know that the free version of News API only contains the truncated news article. Added link to the original article source.
-2. The app calculates the relative position of an article among the list of articles to generate the dynamic links. So, if a new article is added in the list after the user clicks on a paticular news article, the app might generate different news in the details page.
