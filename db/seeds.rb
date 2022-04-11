@@ -1,7 +1,5 @@
 User.destroy_all
-User.reset_pk_sequence
 Slot.destroy_all
-Slot.reset_pk_sequence
 Meeting.destroy_all
 Message.destroy_all
 
