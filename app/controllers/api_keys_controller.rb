@@ -3,9 +3,9 @@ class ApiKeysController < ApplicationController
   skip_before_action :verify_authenticity_token
   include ApiKeyAuthenticatable
   # Require token authentication for index
-  prepend_before_action :authenticate_with_api_key!, only: [:index, :user_details, :time_slots, :meetings, :meeting]
+  prepend_before_filter :authenticate_with_api_key!, only: [:index, :user_details, :time_slots, :meetings, :meeting]
   # Optional token authentication for logout
-  prepend_before_action :authenticate_with_api_key, only: [:destroy]
+  prepend_before_filter :authenticate_with_api_key, only: [:destroy]
 
   def index
     # render json: current_bearer.api_keys
