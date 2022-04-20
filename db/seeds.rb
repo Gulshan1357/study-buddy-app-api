@@ -11,7 +11,7 @@ chris = User.create!(
   last_name: 'Hemsworth',
   details: 'I am a fourth year student. I also love acting, reading books and nature. '
   )
-# chris.avatar.attach(io: File.open(File.join(Rails.root,'app/assets/images/chris.jpg')), filename: 'chris.jpg')
+chris.avatar.attach(io: File.open(File.join(Rails.root,'app/assets/images/chris.jpg')), filename: 'chris.jpg')
 if chris.persisted?
   chris.slots.create(
     start_time: DateTime.new(2022,05,25,12)
@@ -32,7 +32,7 @@ elsa = User.create!(
   last_name: 'Patakay',
   details: 'I am a second year student. I love running, mountain climbing and skiing.'
 )
-# elsa.avatar.attach(io: File.open(File.join(Rails.root,'app/assets/images/elsa.jpg')), filename: 'elsa.jpg')
+elsa.avatar.attach(io: File.open(File.join(Rails.root,'app/assets/images/elsa.jpg')), filename: 'elsa.jpg')
 if elsa.persisted?
   elsa.slots.create(
     start_time: DateTime.new(2022,05,25,12)
