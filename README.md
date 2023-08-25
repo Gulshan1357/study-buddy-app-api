@@ -1,8 +1,4 @@
 # Study Buddy App
-### Version 1: https://vast-hollows-44383.herokuapp.com/
-### Version 2 (With API): https://study-buddy-app-api.herokuapp.com/
-
-
 
 An application where a student can find a study partner.
 
